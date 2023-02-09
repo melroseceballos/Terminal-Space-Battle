@@ -74,11 +74,12 @@ if (Math.random() < alien[0].accuracy) {
 <hr>
 
 # &#x1F47E; Setup
-
-Make a folder `spacebattle`.
-
-touch `app.js` in the `spacebattle` folder.
-`npm i prompt-sync` in the `spacebattle` folder.
+- Fork this repository to your GitHub Enterprise account
+- Clone the forked repo to your local machine
+- `cd` into the `DLVR-Space-Battle` folder
+- touch `app.js`
+- run `npm init -y` to initialize npm. This will set up your project to be able to install node packages.
+- Run `npm i prompt-sync` to install the `prompt-sync` package. This package gets user input from the CLI.
 
 ## Reminder on how to run the game in the terminal
 
