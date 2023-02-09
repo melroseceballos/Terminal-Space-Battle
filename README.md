@@ -1,5 +1,5 @@
 # SPACE BATTLE
-![star wars](https://vignette4.wikia.nocookie.net/starwars/images/6/65/Battle_of_Endor.png/revision/latest?cb=20121216165239)
+<p align="center"><img href="./battle_of_endor.png" /></p>
 
 Today you will be using your knowledge of OOP, loops, and functions to build a rudimentary **space battle** game. The game will be programmed for, and played in the terminal (using the prompt-sync package install via npm i prompt-sync). You will need to use said package to get user input.
 
