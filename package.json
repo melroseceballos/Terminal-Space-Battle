@@ -1,0 +1,19 @@
+{
+  "name": "dlvr-space-battle",
+  "version": "1.0.0",
+  "description": "<p align=\"center\"><img src=\"./battle_of_endor.png\" /></p>",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/melceballos/DLVR-Space-Battle.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
