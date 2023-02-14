@@ -1,9 +1,6 @@
 // Require prompt sync
  const prompt = require ('prompt-sync') (); 
 
- //Console clears
- console.clear()
-
 // Create Parent class for Ship 
 class Ship { 
     constructor (name,hull,firepower,accuracy){ 
@@ -11,8 +8,25 @@ class Ship {
         this.hull = hull 
         this.firepower = firepower 
         this.accuracy = accuracy 
-    } 
-} 
+        
+        }
+    }  
+    attack(enemy); {
+        if(Math.random() <alienShips.accuracy){
+                console.log("You just got hit!")
+        }else{
+            console.log("Miss!")
+        }
+    }
+    
+    healthBar(); {
+        if( hull > 0){
+            return true
+        }else{
+            return false
+        }
+    }
+    
 // Creating USS Schwarz
 const player = new Ship ("USS Shwarz", 20, 5, .7)
 console.table(player);
@@ -34,3 +48,5 @@ for ( let i = 0; i < alienShips.length; i++){
     alienShips[i] = new AlienShipValues(nameOfShips)
 }
 console.table(alienShips);
+
+/* ********************GAMEPLAY************************ **/
