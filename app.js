@@ -1,6 +1,9 @@
 // Require prompt sync
  const prompt = require ('prompt-sync') (); 
 
+ //Console clears
+ console.clear()
+
 // Create Parent class for Ship 
 class Ship { 
     constructor (name,hull,firepower,accuracy){ 
@@ -12,13 +15,22 @@ class Ship {
 } 
 // Creating USS Schwarz
 const player = new Ship ("USS Shwarz", 20, 5, .7)
+console.table(player);
 
-// setting values for Alien Ship
-class AlienShip extends Ship {
-     constuctor(hull,firepower,accuracy){ 
-        this.hull = Math.floor(Math.random () * 4 + 3) 
-        this.firepower = Math.floor(Math.random () * 3 + 2)
-         this.accuracy = Math.floor(Math.random () * .6 + .2);
-         } 
-        }
+// Defining values for Alien Ship
+class AlienShipValues extends Ship {
+    constructor(name) {
+        super(name)
+        this.hull = Math.floor((Math.random() * 4) + 3)
+        this.firepower = Math.floor((Math.random() * 3) + 2)
+        this.accuracy = Math.floor((Math.random() * 3) + 6) / 10
+    }
+}
         
+// Creating 6 alien spaceships
+const alienShips = ["Boa", "Rafael", "Jonathan", "Derrick", "Gago", "Armand"]
+for ( let i = 0; i < alienShips.length; i++){
+    let nameOfShips = alienShips[i]
+    alienShips[i] = new AlienShipValues(nameOfShips)
+}
+console.table(alienShips);
