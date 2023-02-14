@@ -8,28 +8,26 @@ class Ship {
         this.hull = hull 
         this.firepower = firepower 
         this.accuracy = accuracy 
-        
-        }
-    }  
-    attack(enemy); {
+    }
+}
+      /* attack ();{
         if(Math.random() <alienShips.accuracy){
                 console.log("You just got hit!")
         }else{
             console.log("Miss!")
         }
-    }
-    
-    healthBar(); {
-        if( hull > 0){
-            return true
-        }else{
-            return false
+}
+        healthBar(); {
+            if( hull > 0){
+                return true
+            }else{
+                return false
+            }
         }
-    }
-    
+        **/
+
 // Creating USS Schwarz
 const player = new Ship ("USS Shwarz", 20, 5, .7)
-console.table(player);
 
 // Defining values for Alien Ship
 class AlienShipValues extends Ship {
@@ -39,7 +37,7 @@ class AlienShipValues extends Ship {
         this.firepower = Math.floor((Math.random() * 3) + 2)
         this.accuracy = Math.floor((Math.random() * 3) + 6) / 10
     }
-}
+} 
         
 // Creating 6 alien spaceships
 const alienShips = ["Boa", "Rafael", "Jonathan", "Derrick", "Gago", "Armand"]
@@ -47,6 +45,15 @@ for ( let i = 0; i < alienShips.length; i++){
     let nameOfShips = alienShips[i]
     alienShips[i] = new AlienShipValues(nameOfShips)
 }
-console.table(alienShips);
 
 /* ********************GAMEPLAY************************ **/
+console.log("Welcome to Space Battle");
+console.log("Alien ships are taking over Earth - destroy them all!")
+console.log("To begin, here are your stats: ")
+console.table(player);
+console.log("Here are the Alien ships stats: ");
+console.table(alienShips);
+
+//Create attack loop
+
+//Create end game sequence
