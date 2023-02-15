@@ -2,29 +2,31 @@
  const prompt = require ('prompt-sync') (); 
 
 // Create Parent class for Ship 
-class Ship { 
-    constructor (name,hull,firepower,accuracy){ 
-        this.name = name 
-        this.hull = hull 
-        this.firepower = firepower 
-        this.accuracy = accuracy 
+class Ship {
+    constructor(name, hull, firepower, accuracy) {
+        this.name = name
+        this.hull = hull
+        this.firepower = firepower
+        this.accuracy = accuracy
     }
-}
-      /* attack ();{
-        if(Math.random() <alienShips.accuracy){
-                console.log("You just got hit!")
-        }else{
+    attack(enemy) {
+        let hitChance = Math.random()
+        if (hitChance <= this.accuracy) {
+            enemy.hull -= this.firepower
+            console.log("You have been hit!")
+        } else {
             console.log("Miss!")
         }
-}
-        healthBar(); {
-            if( hull > 0){
-                return true
-            }else{
-                return false
-            }
+    }
+    healthBar() {
+        if (this.hull < 0) {
+            return false
+        } else {
+            return true
         }
-        **/
+    }
+}
+
 
 // Creating USS Schwarz
 const player = new Ship ("USS Shwarz", 20, 5, .7)
@@ -55,5 +57,7 @@ console.log("Here are the Alien ships stats: ");
 console.table(alienShips);
 
 //Create attack loop
+let continueGame = true;
+for (let i = 0; i < alienShips.length && player.healthBar() && continueGame; i++) {
 
-//Create end game sequence
+}
