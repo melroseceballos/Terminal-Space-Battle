@@ -47,7 +47,6 @@ for ( let i = 0; i < alienShips.length; i++){
     let nameOfShips = alienShips[i]
     alienShips[i] = new AlienShipValues(nameOfShips)
 }
-
 /* ********************GAMEPLAY************************ **/
 console.log("Welcome to Space Battle");
 console.log("Alien ships are taking over Earth - destroy them all!")
@@ -55,9 +54,36 @@ console.log("To begin, here are your stats: ")
 console.table(player);
 console.log("Here are the Alien ships stats: ");
 console.table(alienShips);
+console.table(alienShips);
 
-//Create attack loop
-let continueGame = true;
-for (let i = 0; i < alienShips.length && player.healthBar() && continueGame; i++) {
+        // Every time a round starts clear the console, display the round number, and ship health
+        console.clear()
+        let i = 0;
+        console.log('ROUND ' + (i + 1))
+        console.log('-------')
+        console.log('Your opponent: ' + alienShips[i].name + ' (' + alienShips[i].hull + ' hull points)')
+        console.log('You: USS Schwarzenegger ' + '(' + player.hull + ' hull points)\n')
 
-}
+        // Keep fighting the same alien ship while it and the player are both alive
+        let continueGame = true;
+        while (player.healthBar() && alienShips[i].healthBar() && continueGame) {
+
+            // Ask the player if they want to attack or retreat
+            let fireOrRetreat = prompt('--> Press "f" to fire, any other key to retreat:  ')
+
+            // If the player attacks the alien, the alien attacks back (if alive)...
+            if (fireOrRetreat.toLowerCase() === 'f') {
+                console.log('')
+                player.attack(alienShips[i])
+                if (alienShips[i].healthBar()) {
+                    alienShips[i].attack(player)
+                }
+                console.log('')
+
+                // ...otherwise the game ends if the player retreats
+            } else {
+                continueGame = false
+            }
+        }
+   
+    console.log('GAME OVER')
